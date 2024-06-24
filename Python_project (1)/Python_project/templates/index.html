@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litter Legends</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="C:\Users\yeshw\OneDrive\Desktop\Python_project\static\scripts\phaser.min.js"></script>
+    <script src="C:\Users\yeshw\OneDrive\Desktop\Python_project\static\scripts\game.js"></script>
+    <style>
+        /* Additional inline styles if needed */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Phaser Game Container -->
+<div id="gameContainer"></div>
+
+<!-- Game Over Modal -->
+<div id="gameOverModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Game Over!</h2>
+        <p>Your Score: <span id="finalScore"></span></p>
+        <button id="newGameBtn">New Game</button>
+    </div>
+</div>
+
+<script>
+    // Ensure Phaser is loaded and ready to create the game
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize the Phaser game
+        var config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 200 },
+                    debug: false
+                }
+            },
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            }
+        };
+
+        var game = new Phaser.Game(config);
+    });
+</script>
+
+</body>
+</html>
